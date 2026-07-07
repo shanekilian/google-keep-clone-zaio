@@ -7,10 +7,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -34,19 +32,43 @@
         </div>
 
         <div class="top-navbar-right">
-          <i class="material-icons">search</i>
-          <i class="material-icons">view_agenda</i>
-          <i class="material-icons">settings</i>
-          <i class="material-icons">apps</i>
-          <i class="material-icons">account_circle</i>
+          <i class="material-icons-outlined">search</i>
+          <i class="material-icons-outlined">view_agenda</i>
+          <i class="material-icons-outlined">settings</i>
+          <i class="material-icons-outlined">apps</i>
+          <i class="material-icons-outlined">account_circle</i>
         </div>
       </nav>
     </header>
 
-    <aside>
-      <nav></nav>
-    </aside>
-
-    <main></main>
+    <div class="content-wrapper">
+      <aside>
+        <nav class="sidebar">
+          <div class="sidebar-items">
+            <div class="sidebar-item">
+              <i class="material-icons-outlined">lightbulb</i><span>Notes</span>
+            </div>
+            <div class="sidebar-item">
+              <i class="material-icons-outlined">add_alert</i
+              ><span>Reminder</span>
+            </div>
+            <div class="sidebar-item">
+              <i class="material-icons-outlined">edit</i
+              ><span>Edit Labels</span>
+            </div>
+            <div class="sidebar-item">
+              <i class="material-icons-outlined">archive</i><span>Archive</span>
+            </div>
+            <div class="sidebar-item">
+              <i class="material-icons-outlined">delete</i><span>Bin</span>
+            </div>
+          </div>
+          <div class="sidebar-footer">
+            <span>Zaio Google Keep Educational Project</span>
+          </div>
+        </nav>
+      </aside>
+      <main></main>
+    </div>
   </body>
 </html>

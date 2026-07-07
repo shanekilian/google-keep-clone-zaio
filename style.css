@@ -6,6 +6,14 @@
 body {
   font-family: "Outfit", "Arimo", sans-serif;
 }
+html,
+body {
+  height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
 .material-icons {
   color: rgb(95, 99, 104);
 }
@@ -98,4 +106,55 @@ i {
 .top-navbar-right i:hover {
   background-color: rgb(240, 244, 249);
   border-radius: 50%;
+}
+/* SIDEBARE */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+aside {
+  width: 280px;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px;
+}
+.sidebar-footer span {
+  font-size: 12px;
+  color: rgb(95, 99, 104);
+}
+.sidebar-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 12px;
+  padding-top: 8px;
+  height: 48px;
+}
+.sidebar-item span {
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sidebar-item i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+main {
+  flex: 1;
 }
