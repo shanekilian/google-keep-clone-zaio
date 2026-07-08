@@ -45,7 +45,7 @@
       <aside>
         <nav class="sidebar">
           <div class="sidebar-items">
-            <div class="sidebar-item">
+            <div class="sidebar-item active" id="notesTab">
               <i class="material-icons-outlined">lightbulb</i><span>Notes</span>
             </div>
             <div class="sidebar-item">
@@ -56,7 +56,7 @@
               <i class="material-icons-outlined">edit</i
               ><span>Edit Labels</span>
             </div>
-            <div class="sidebar-item">
+            <div class="sidebar-item" id="archiveTab">
               <i class="material-icons-outlined">archive</i><span>Archive</span>
             </div>
             <div class="sidebar-item">
@@ -69,47 +69,61 @@
         </nav>
       </aside>
       <main>
-        <div class="note-bar" id="noteBar">
-          <div class="note-input">
-            <input type="text" placeholder="Take a note..." id="noteTrigger" />
-          </div>
-          <div class="note-input-icons">
-            <i class="material-icons-outlined">check_box</i>
-            <i class="material-icons-outlined">brush</i>
-            <i class="material-icons-outlined">image</i>
-          </div>
-        </div>
-
-        <div class="note-form hidden" id="noteForm">
-          <div class="note-form-top">
-            <input type="text" placeholder="Title" class="note-form-title" />
-            <i class="material-icons-outlined">push_pin</i>
-          </div>
-          <textarea
-            placeholder="Take a note..."
-            class="note-form-body"
-          ></textarea>
-          <div class="note-form-toolbar">
-            <div class="note-form-toolbar-left">
-              <i class="material-icons-outlined">format_color_text</i>
-              <i class="material-icons-outlined">palette</i>
-              <i class="material-icons-outlined">notification_add</i>
-              <i class="material-icons-outlined">person_add</i>
-              <i class="material-icons-outlined">image</i>
-              <i class="material-icons-outlined">archive</i>
-              <i class="material-icons-outlined">more_vert</i>
-              <i class="material-icons-outlined">undo</i>
-              <i class="material-icons-outlined">redo</i>
+        <div class="note-view" id="notesView">
+          <div class="note-bar" id="noteBar">
+            <div class="note-input">
+              <input
+                type="text"
+                placeholder="Take a note..."
+                id="noteTrigger"
+              />
             </div>
-            <button id="closeNoteForm">Close</button>
+            <div class="note-input-icons">
+              <i class="material-icons-outlined">check_box</i>
+              <i class="material-icons-outlined">brush</i>
+              <i class="material-icons-outlined">image</i>
+            </div>
+          </div>
+
+          <div class="note-form hidden" id="noteForm">
+            <div class="note-form-top">
+              <input type="text" placeholder="Title" class="note-form-title" />
+              <i class="material-icons-outlined">push_pin</i>
+            </div>
+            <textarea
+              placeholder="Take a note..."
+              class="note-form-body"
+            ></textarea>
+            <div class="note-form-toolbar">
+              <div class="note-form-toolbar-left">
+                <i class="material-icons-outlined">format_color_text</i>
+                <i class="material-icons-outlined">palette</i>
+                <i class="material-icons-outlined">notification_add</i>
+                <i class="material-icons-outlined">person_add</i>
+                <i class="material-icons-outlined">image</i>
+                <i class="material-icons-outlined">archive</i>
+                <i class="material-icons-outlined">more_vert</i>
+                <i class="material-icons-outlined">undo</i>
+                <i class="material-icons-outlined">redo</i>
+              </div>
+              <button id="closeNoteForm">Close</button>
+            </div>
+          </div>
+
+          <div class="notes-grid" id="notesGrid"></div>
+
+          <div class="note-dashboard" id="noteDashboard">
+            <i class="material-icons-outlined">lightbulb</i>
+            <span>Notes that you add appear here</span>
           </div>
         </div>
 
-        <div class="notes-grid" id="notesGrid"></div>
-
-        <div class="note-dashboard">
-          <i class="material-icons-outlined">lightbulb</i>
-          <span>Notes that you add appear here</span>
+        <div class="archive-view hidden" id="archiveView">
+          <div class="notes-grid" id="archiveGrid"></div>
+          <div class="note-dashboard" id="archiveDashboard">
+            <i class="material-icons-outlined">archive</i>
+            <span>Your archived notes appears here</span>
+          </div>
         </div>
       </main>
     </div>

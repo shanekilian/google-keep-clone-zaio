@@ -3,7 +3,12 @@ const noteForm = document.getElementById("noteForm");
 const noteTrigger = document.getElementById("noteTrigger");
 const closeNoteForm = document.getElementById("closeNoteForm");
 const notesGrid = document.getElementById("notesGrid");
-const noteDashboard = document.querySelector(".note-dashboard");
+const noteDashboard = document.getElementById("noteDashboard");
+const notesTab = document.getElementById("notesTab");
+const archiveTab = document.getElementById("archiveTab");
+const notesView = document.getElementById("notesView");
+const archiveView = document.getElementById("archiveView");
+const archiveGrid = document.getElementById("archiveGrid");
 
 function saveNote() {
   const titleValue = noteForm.querySelector(".note-form-title").value;
@@ -22,15 +27,22 @@ function saveNote() {
         <i class="material-icons-outlined">notification_add</i>
         <i class="material-icons-outlined">person_add</i>
         <i class="material-icons-outlined">image</i>
-        <i class="material-icons-outlined">archive</i>
+        <i class="material-icons-outlined archive-btn">archive</i>
         <i class="material-icons-outlined">more_vert</i>
         </div>`;
     notesGrid.appendChild(card);
+    attachArchiveButton(card);
 
     if (notesGrid.children.length > 0) {
       noteDashboard.classList.add("hidden");
     }
   }
+}
+
+function updateDashboard() {
+  noteDashboard.classList.toggle("hidden", notesGrid.children.length > 0);
+  const archiveDashboard = document.getElementById("archiveDashboard");
+  archiveDashboard.classList.toggle("hidden", archiveGrid.children.length > 0);
 }
 
 // BRING UP THE NOTE FORM
@@ -69,3 +81,32 @@ document.addEventListener("click", (event) => {
     noteForm.querySelector(".note-form-body").value = "";
   }
 });
+
+// ARCHIVE TAB
+notesTab.addEventListener("click", () => {
+  notesView.classList.remove("hidden");
+  archiveView.classList.add("hidden");
+  notesTab.classList.add("active");
+  archiveTab.classList.remove("active");
+});
+
+archiveTab.addEventListener("click", () => {
+  notesView.classList.add("hidden");
+  archiveView.classList.remove("hidden");
+  notesTab.classList.remove("active");
+  archiveTab.classList.add("active");
+});
+
+function attachArchiveButton(card) {
+  const archiveButton = card.querySelector(".archive-btn");
+  archiveButton.addEventListener("click", () => {
+    if (card.parentElement === notesGrid) {
+      archiveGrid.appendChild(card);
+      archiveButton.textContent = "unarchive";
+    } else {
+      notesGrid.appendChild(card);
+      archiveButton.textContent = "archive";
+    }
+    updateDashboard();
+  });
+}
