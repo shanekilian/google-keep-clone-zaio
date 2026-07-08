@@ -278,18 +278,27 @@ main {
 
 .notes-grid {
   display: flex;
-  flex-direction: wrap;
-  gap: 16px;
+  flex-wrap: wrap;
   margin: 0 180px;
 }
 .note-card {
+  position: relative;
   width: 240px;
   border: 1px solid rgb(219, 220, 224);
   border-radius: 8px;
   margin: 16px;
 }
+.note-card:hover {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.note-card .card-toolbar {
+  opacity: 0;
+}
+.note-card:hover .card-toolbar {
+  opacity: 1;
+}
 .note-card h3 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   padding: 16px 16px 0px 16px;
 }
@@ -298,4 +307,42 @@ main {
   font-weight: 400;
   color: rgb(60, 64, 67);
   padding: 12px 16px;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-checkbox {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  opacity: 0;
+}
+.card-pin {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+}
+.card-toolbar {
+  display: flex;
+  margin: 0px 4px;
+  align-items: center;
+  margin-top: 12px;
+  opacity: 0;
+}
+.note-card:hover .card-checkbox,
+.note-card:hover .card-pin,
+.note-card:hover .card-toolbar {
+  opacity: 1;
+}
+.card-toolbar i,
+.card-checkbox i,
+.card-pin i {
+  font-size: 20px;
+  margin: 0px 3px;
+  cursor: pointer;
 }

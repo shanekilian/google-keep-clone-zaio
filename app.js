@@ -13,7 +13,18 @@ function saveNote() {
     const card = document.createElement("div");
     card.classList.add("note-card");
     card.innerHTML = `
-        <h3>${titleValue}</h3><p>${bodyValue}</p>`;
+        <div class="card-checkbox"><i class="material-icons-outlined">check_circle</i></div>
+        <div class="card-pin"><i class="material-icons-outlined">push_pin</i></div>
+        <h3>${titleValue}</h3>
+        <p>${bodyValue}</p>
+        <div class="card-toolbar">
+        <i class="material-icons-outlined">palette</i>
+        <i class="material-icons-outlined">notification_add</i>
+        <i class="material-icons-outlined">person_add</i>
+        <i class="material-icons-outlined">image</i>
+        <i class="material-icons-outlined">archive</i>
+        <i class="material-icons-outlined">more_vert</i>
+        </div>`;
     notesGrid.appendChild(card);
 
     if (notesGrid.children.length > 0) {
