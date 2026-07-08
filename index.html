@@ -69,9 +69,9 @@
         </nav>
       </aside>
       <main>
-        <div class="note-bar">
+        <div class="note-bar" id="noteBar">
           <div class="note-input">
-            <input type="text" placeholder="Take a note..." />
+            <input type="text" placeholder="Take a note..." id="noteTrigger" />
           </div>
           <div class="note-input-icons">
             <i class="material-icons-outlined">check_box</i>
@@ -79,11 +79,38 @@
             <i class="material-icons-outlined">image</i>
           </div>
         </div>
+
+        <div class="note-form hidden" id="noteForm">
+          <div class="note-form-top">
+            <input type="text" placeholder="Title" class="note-form-title" />
+            <i class="material-icons-outlined">push_pin</i>
+          </div>
+          <textarea
+            placeholder="Take a note..."
+            class="note-form-body"
+          ></textarea>
+          <div class="note-form-toolbar">
+            <div class="note-form-toolbar-left">
+              <i class="material-icons-outlined">format_color_text</i>
+              <i class="material-icons-outlined">palette</i>
+              <i class="material-icons-outlined">notification_add</i>
+              <i class="material-icons-outlined">person_add</i>
+              <i class="material-icons-outlined">image</i>
+              <i class="material-icons-outlined">archive</i>
+              <i class="material-icons-outlined">more_vert</i>
+              <i class="material-icons-outlined">undo</i>
+              <i class="material-icons-outlined">redo</i>
+            </div>
+            <button id="closeNoteForm">Close</button>
+          </div>
+        </div>
+
         <div class="note-dashboard">
           <i class="material-icons-outlined">lightbulb</i>
           <span>Notes that you add appear here</span>
         </div>
       </main>
     </div>
+    <script src="./app.js"></script>
   </body>
 </html>
