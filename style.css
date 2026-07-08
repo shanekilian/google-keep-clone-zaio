@@ -142,6 +142,11 @@ aside {
   padding-top: 8px;
   height: 48px;
 }
+.sidebar-item:hover {
+  background-color: rgb(240, 244, 249);
+  border-radius: 0 24px 24px 0;
+  cursor: pointer;
+}
 .sidebar-item span {
   margin-left: 20px;
   font-size: 14px;
@@ -190,6 +195,10 @@ main {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.note-input-icons i:hover {
+  background-color: rgb(226, 230, 235);
+  border-radius: 50%;
 }
 .note-dashboard {
   display: flex;
@@ -256,6 +265,10 @@ main {
 .note-form-toolbar-left {
   display: flex;
   gap: 4px;
+}
+.note-form-toolbar-left:hover {
+  background-color: rgb(240, 244, 249);
+  border-radius: 50%;
 }
 .note-form-toolbar i {
   font-size: 20px;
