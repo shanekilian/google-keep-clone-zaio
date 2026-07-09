@@ -387,6 +387,17 @@ main {
   font-size: 20px;
   margin: 0px 3px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+.card-toolbar i:hover,
+.card-checkbox i:hover,
+.card-pin i:hover {
+  background-color: rgb(240, 244, 249);
+  border-radius: 50%;
 }
 
 /* ARCHIVE */
@@ -413,4 +424,9 @@ main {
 }
 .option-item:hover {
   background-color: rgb(240, 244, 249);
+}
+
+.note-form-toolbar-left i.menu-open {
+  background-color: rgb(240, 244, 249);
+  border-radius: 50%;
 }

@@ -11,6 +11,8 @@ const archiveView = document.getElementById("archiveView");
 const archiveGrid = document.getElementById("archiveGrid");
 const optionsModal = document.getElementById("optionsModal");
 let activeCard = null;
+const formMoreButton = document.getElementById("formMoreButton");
+const deleteNoteOption = document.getElementById("deleteNoteOption");
 
 function saveNote() {
   const titleValue = noteForm.querySelector(".note-form-title").value;
@@ -114,7 +116,7 @@ function attachArchiveButton(card) {
   });
 }
 
-// MORE OPTIONS MODAL
+// MORE OPTIONS MODAL NOTE CARD
 function attachMoreOptions(card) {
   const moreButton = card.querySelector(".more-btn");
 
@@ -140,5 +142,40 @@ document.addEventListener("click", (event) => {
       activeCard.classList.remove("menu-open");
       activeCard = null;
     }
+  }
+});
+
+// MORE OPTIONS MODAL NOTE FORM
+formMoreButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  const rect = formMoreButton.getBoundingClientRect();
+  optionsModal.style.top = rect.bottom + window.scrollY + "px";
+  optionsModal.style.left = rect.left + window.scrollX + "px";
+
+  optionsModal.classList.remove("hidden");
+
+  formMoreButton.classList.add("menu-open");
+});
+
+document.addEventListener("click", (event) => {
+  if (!optionsModal.contains(event.target)) {
+    optionsModal.classList.add("hidden");
+
+    if (activeCard) {
+      activeCard.classList.remove("menu-open");
+      activeCard = null;
+    }
+    formMoreButton.classList.remove("menu-open");
+  }
+});
+
+// DELETE NOTE FROM THE MORE OPTIONS MODAL IN NOTE CARD
+deleteNoteOption.addEventListener("click", () => {
+  if (activeCard) {
+    activeCard.remove();
+    activeCard = null;
+    optionsModal.classList.add("hidden");
+    updateDashboard();
   }
 });
