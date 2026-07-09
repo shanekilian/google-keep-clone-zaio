@@ -46,5 +46,5 @@ Several buttons and icons exist in the interface purely for visual/layout accura
 
 - HTML5
 - CSS3 (Flexbox, media queries, CSS transitions via `opacity`)
-- Vanilla JavaScript (DOM manipulation, event listeners — no frameworks or libraries)
+- Basic JavaScript (DOM manipulation, event listeners — no frameworks or libraries)
 - Google Material Icons (Filled + Outlined) via Google Fonts CDN
