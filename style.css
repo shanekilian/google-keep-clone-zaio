@@ -9,6 +9,7 @@ body {
 html,
 body {
   height: 100vh;
+  overflow: hidden;
 }
 body {
   display: flex;
@@ -112,10 +113,12 @@ i {
   display: flex;
   flex: 1;
   min-height: 0;
+  overflow: hidden;
 }
 
 aside {
   width: 280px;
+  height: 100%;
 }
 .sidebar {
   display: flex;
@@ -162,6 +165,9 @@ aside {
 }
 main {
   flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* NOTE BAR */

@@ -1,3 +1,5 @@
+// VARIBLES - THAT I USE FOR MY JS FUNCTIONS AND FEATURES
+
 const noteBar = document.getElementById("noteBar");
 const noteForm = document.getElementById("noteForm");
 const noteTrigger = document.getElementById("noteTrigger");
@@ -14,6 +16,7 @@ let activeCard = null;
 const formMoreButton = document.getElementById("formMoreButton");
 const deleteNoteOption = document.getElementById("deleteNoteOption");
 
+// SAVE NOTE FUNCTION - Adds notes in and removes the dashboard if there are notes
 function saveNote() {
   const titleValue = noteForm.querySelector(".note-form-title").value;
   const bodyValue = noteForm.querySelector(".note-form-body").value;
@@ -87,7 +90,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// ARCHIVE TAB
+// ARCHIVE TAB - Moves notes to and from the archive tab
 notesTab.addEventListener("click", () => {
   notesView.classList.remove("hidden");
   archiveView.classList.add("hidden");
@@ -116,7 +119,7 @@ function attachArchiveButton(card) {
   });
 }
 
-// MORE OPTIONS MODAL NOTE CARD
+// MORE OPTIONS MODAL NOTE CARD - Opens the more options modal from the note card
 function attachMoreOptions(card) {
   const moreButton = card.querySelector(".more-btn");
 
@@ -134,18 +137,7 @@ function attachMoreOptions(card) {
   });
 }
 
-document.addEventListener("click", (event) => {
-  if (!optionsModal.contains(event.target)) {
-    optionsModal.classList.add("hidden");
-
-    if (activeCard) {
-      activeCard.classList.remove("menu-open");
-      activeCard = null;
-    }
-  }
-});
-
-// MORE OPTIONS MODAL NOTE FORM
+// MORE OPTIONS MODAL NOTE FORM - Opens the more options modal from the note form
 formMoreButton.addEventListener("click", (event) => {
   event.stopPropagation();
 
@@ -170,7 +162,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// DELETE NOTE FROM THE MORE OPTIONS MODAL IN NOTE CARD
+// DELETE NOTE - Deletes the note card from the dashboard in the more options modal of the note card
 deleteNoteOption.addEventListener("click", () => {
   if (activeCard) {
     activeCard.remove();
