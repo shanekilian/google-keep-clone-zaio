@@ -103,17 +103,23 @@
             ></textarea>
             <div class="note-form-toolbar">
               <div class="note-form-toolbar-left">
-                <i class="material-icons-outlined" title="test"
+                <i class="material-icons-outlined" title="Formating options"
                   >format_color_text</i
                 >
-                <i class="material-icons-outlined">palette</i>
-                <i class="material-icons-outlined">notification_add</i>
-                <i class="material-icons-outlined">person_add</i>
-                <i class="material-icons-outlined">image</i>
-                <i class="material-icons-outlined">archive</i>
-                <i class="material-icons-outlined">more_vert</i>
-                <i class="material-icons-outlined">undo</i>
-                <i class="material-icons-outlined">redo</i>
+                <i class="material-icons-outlined" title="Background options"
+                  >palette</i
+                >
+                <i class="material-icons-outlined" title="Remind me"
+                  >notification_add</i
+                >
+                <i class="material-icons-outlined" title="Collaborator"
+                  >person_add</i
+                >
+                <i class="material-icons-outlined" title="Add image">image</i>
+                <i class="material-icons-outlined" title="Archive">archive</i>
+                <i class="material-icons-outlined" title="More">more_vert</i>
+                <i class="material-icons-outlined" title="Undo">undo</i>
+                <i class="material-icons-outlined" title="Redo">redo</i>
               </div>
               <button id="closeNoteForm">Close</button>
             </div>
@@ -136,6 +142,17 @@
         </div>
       </main>
     </div>
+
+    <div class="options-modal hidden" id="optionsModal">
+      <div class="option-item">Delete note</div>
+      <div class="option-item">Add label</div>
+      <div class="option-item">Add drawing</div>
+      <div class="option-item">Make a copy</div>
+      <div class="option-item">Show tick boxes</div>
+      <div class="option-item">Copy to Google Docs</div>
+      <div class="option-item">Version history</div>
+    </div>
+
     <script src="./app.js"></script>
   </body>
 </html>

@@ -237,6 +237,23 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.note-form-top span {
+  font-size: 20px;
+  font-weight: 400;
+}
+.note-form-top i {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+.note-form-top i:hover {
+  background-color: rgb(226, 230, 235);
+  border-radius: 50%;
+}
+
 .note-form-title {
   border: none;
   font-size: 20px;
@@ -266,8 +283,17 @@ main {
   display: flex;
   gap: 4px;
 }
-.note-form-toolbar-left:hover {
-  background-color: rgb(240, 244, 249);
+.note-form-toolbar-left i {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  margin: 0px 8px;
+}
+.note-form-toolbar-left i:hover {
+  background-color: rgb(226, 230, 235);
   border-radius: 50%;
 }
 .note-form-toolbar i {
@@ -349,7 +375,10 @@ main {
 }
 .note-card:hover .card-checkbox,
 .note-card:hover .card-pin,
-.note-card:hover .card-toolbar {
+.note-card:hover .card-toolbar,
+.note-card.menu-open .card-checkbox,
+.note-card.menu-open .card-pin,
+.note-card.menu-open .card-toolbar {
   opacity: 1;
 }
 .card-toolbar i,
@@ -364,4 +393,24 @@ main {
 .sidebar-item.active {
   background-color: rgb(254, 247, 197);
   border-radius: 0 24px 24px 0;
+}
+
+/* MORE OPTIONS MODAL */
+.options-modal {
+  position: absolute;
+  background-color: white;
+  border: 1px solid rgb(219, 220, 224);
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 8px 0px;
+  width: 220px;
+  z-index: 10;
+}
+.option-item {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.option-item:hover {
+  background-color: rgb(240, 244, 249);
 }

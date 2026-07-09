@@ -9,6 +9,8 @@ const archiveTab = document.getElementById("archiveTab");
 const notesView = document.getElementById("notesView");
 const archiveView = document.getElementById("archiveView");
 const archiveGrid = document.getElementById("archiveGrid");
+const optionsModal = document.getElementById("optionsModal");
+let activeCard = null;
 
 function saveNote() {
   const titleValue = noteForm.querySelector(".note-form-title").value;
@@ -28,10 +30,11 @@ function saveNote() {
         <i class="material-icons-outlined">person_add</i>
         <i class="material-icons-outlined">image</i>
         <i class="material-icons-outlined archive-btn">archive</i>
-        <i class="material-icons-outlined">more_vert</i>
+        <i class="material-icons-outlined more-btn">more_vert</i>
         </div>`;
     notesGrid.appendChild(card);
     attachArchiveButton(card);
+    attachMoreOptions(card);
 
     if (notesGrid.children.length > 0) {
       noteDashboard.classList.add("hidden");
@@ -110,3 +113,32 @@ function attachArchiveButton(card) {
     updateDashboard();
   });
 }
+
+// MORE OPTIONS MODAL
+function attachMoreOptions(card) {
+  const moreButton = card.querySelector(".more-btn");
+
+  moreButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    const rect = moreButton.getBoundingClientRect();
+    optionsModal.style.top = rect.bottom + window.scrollY + "px";
+    optionsModal.style.left = rect.left + window.scrollX + "px";
+
+    optionsModal.classList.remove("hidden");
+
+    card.classList.add("menu-open");
+    activeCard = card;
+  });
+}
+
+document.addEventListener("click", (event) => {
+  if (!optionsModal.contains(event.target)) {
+    optionsModal.classList.add("hidden");
+
+    if (activeCard) {
+      activeCard.classList.remove("menu-open");
+      activeCard = null;
+    }
+  }
+});
