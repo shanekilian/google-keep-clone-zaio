@@ -171,3 +171,30 @@ deleteNoteOption.addEventListener("click", () => {
     updateDashboard();
   }
 });
+
+// SEARCH TOGGLE - Opens and closes the search bar
+const topNavbar = document.getElementById("topNavbar");
+const topNavbarLeft = document.getElementById("topNavbarLeft");
+const topNavbarCentre = document.getElementById("topNavbarCentre");
+const searchToggleIcon = document.getElementById("searchToggleIcon");
+
+searchToggleIcon.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  const isActive = topNavbar.classList.contains("search-active");
+
+  if (isActive) {
+    topNavbar.classList.remove("search-active");
+    searchToggleIcon.textContent = "search";
+  } else {
+    topNavbar.classList.add("search-active");
+    searchToggleIcon.textContent = "arrow_back";
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (!topNavbarCentre.contains(event.target)) {
+    topNavbar.classList.remove("search-active");
+    searchToggleIcon.textContent = "search";
+  }
+});

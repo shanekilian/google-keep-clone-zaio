@@ -16,8 +16,8 @@
   </head>
   <body>
     <header>
-      <nav class="top-navbar">
-        <div class="top-navbar-left">
+      <nav class="top-navbar" id="topNavbar">
+        <div class="top-navbar-left" id="topNavbarLeft">
           <i class="material-icons" title="Main menu">menu</i>
           <img
             src="./assets/logo_keep_2026_color_2x_web_48dp.png"
@@ -27,9 +27,11 @@
           <span title="Keep">Keep</span>
         </div>
 
-        <div class="top-navbar-centre">
-          <i class="material-icons" title="Search">search</i>
-          <input type="search" placeholder="Search" />
+        <div class="top-navbar-centre" id="topNavbarCentre">
+          <i class="material-icons" title="Search" id="searchToggleIcon"
+            >search</i
+          >
+          <input type="search" placeholder="Search" id="searchInput" />
         </div>
 
         <div class="top-navbar-right">
