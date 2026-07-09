@@ -512,10 +512,22 @@ main {
   .note-card {
     width: 90%;
   }
+  .top-navbar-right i[title="Google Apps"] {
+    display: none;
+  }
+  .top-navbar-right i[title="Refresh"] {
+    display: none;
+  }
 }
 
-@media (max-width: 320px) {
-  .top-navbar-right i[title="Google Apps"] {
+@media (max-width: 395px) {
+  .top-navbar-right i[title="Settings"] {
+    display: none;
+  }
+  .top-navbar-left {
+    width: auto;
+  }
+  .top-navbar-left span {
     display: none;
   }
 }
